@@ -3,7 +3,7 @@
 
     $sql1 = "SELECT * FROM produtos WHERE tipo = 'Café' ORDER BY 'preco'";
     $statement = $pdo->query($sql1);
-    $produtosCafe = $statement->fetchAll(PDO::FETC:\Users\Luiz FIVE\Desktop\Projetos\Projeto CafeCH_ASSOC);
+    $produtosCafe = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     $sql2 = "SELECT * FROM produtos WHERE tipo = 'Almoço' ORDER BY 'preco'";
     $statement = $pdo->query($sql2);
