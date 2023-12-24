@@ -1,51 +1,27 @@
 <?php
-global $pdo;  // Declaração da variável $pdo como global
+// Globaliza a variável $pdo para ser utilizada neste escopo
+global $pdo;
 
-// Inclui o arquivo que cria a instância do PDO
+// Inclui os arquivos necessários
 require "src/conexao-bd.php";
 require "src/Modelo/Produto.php";
+require "src/Repositorio/ProdutoRepositorio.php";
 
-// Consulta SQL para selecionar produtos do tipo 'Café' ordenados por preço
-$sql1 = "SELECT * FROM produtos WHERE tipo = 'Café' ORDER BY preco";
+// Cria uma instância do ProdutoRepositorio passando a instância do PDO como parâmetro
+$produtosRepositorio = new ProdutoRepositorio($pdo);
 
-// Executa a consulta SQL e obtém os resultados
-$statementCafe = $pdo->query($sql1);
-$produtosCafe = $statementCafe->fetchAll(PDO::FETCH_ASSOC);
+// Chama o método opcoesCafe para obter as opções de café do banco de dados
+$dadosCafe = $produtosRepositorio->opcoesCafe();
 
-// Utiliza a função array_map para criar objetos da classe Produto para cada produto de café
-$dadosCafe = array_map(function ($cafe) {
-    // Cria uma nova instância da classe Produto para cada elemento do array
-    return new Produto(
-        $cafe['id'],         // Atribui o valor da chave 'id' do array $cafe à propriedade 'id' da instância
-        $cafe['tipo'],       // Atribui o valor da chave 'tipo' do array $cafe à propriedade 'tipo' da instância
-        $cafe['nome'],       // Atribui o valor da chave 'nome' do array $cafe à propriedade 'nome' da instância
-        $cafe['descricao'],  // Atribui o valor da chave 'descricao' do array $cafe à propriedade 'descricao' da instância
-        $cafe['imagem'],     // Atribui o valor da chave 'imagem' do array $cafe à propriedade 'imagem' da instância
-        $cafe['preco']       // Atribui o valor da chave 'preco' do array $cafe à propriedade 'preco' da instância
-    );
-}, $produtosCafe);  // O array $produtosCafe contém informações sobre os produtos do tipo café
+// Chama um método fictício opcoesAlmoco para obter as opções de almoço (adicione este método se não existir)
+$dadosAlmoco = $produtosRepositorio->opcoesAlmoco();
 
+// Agora, $dadosCafe contém um array de objetos Produto representando as opções de café
+// E $dadosAlmoco contém um array de objetos Produto representando as opções de almoço (se o método existir)
 
-// Consulta SQL para selecionar produtos do tipo 'Almoço' ordenados por preço
-$sql2 = "SELECT * FROM produtos WHERE tipo = 'Almoço' ORDER BY preco";
-
-// Executa a consulta SQL e obtém os resultados
-$statementAlmoco = $pdo->query($sql2);
-$produtosAlmoco = $statementAlmoco->fetchAll(PDO::FETCH_ASSOC);
-
-// Utiliza a função array_map para criar objetos da classe Produto para cada produto de almoço
-$dadosAlmoco = array_map(function ($almoco) {
-    // Cria uma nova instância da classe Produto para cada elemento do array
-    return new Produto(
-        $almoco['id'],         // Atribui o valor da chave 'id' do array $almoco à propriedade 'id' da instância
-        $almoco['tipo'],       // Atribui o valor da chave 'tipo' do array $almoco à propriedade 'tipo' da instância
-        $almoco['nome'],       // Atribui o valor da chave 'nome' do array $almoco à propriedade 'nome' da instância
-        $almoco['descricao'],  // Atribui o valor da chave 'descricao' do array $almoco à propriedade 'descricao' da instância
-        $almoco['imagem'],     // Atribui o valor da chave 'imagem' do array $almoco à propriedade 'imagem' da instância
-        $almoco['preco']       // Atribui o valor da chave 'preco' do array $almoco à propriedade 'preco' da instância
-    );
-}, $produtosAlmoco);  // O array $produtosAlmoco contém informações sobre os produtos do tipo almoço
+// Você pode usar esses dados para exibi-los no seu HTML ou realizar outras operações necessárias
 ?>
+
 
 <!doctype html>
 <html lang="pt-br">
