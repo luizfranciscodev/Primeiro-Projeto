@@ -1,19 +1,12 @@
 <?php
-// conexao-bd.php
 
-// Configurações do banco de dados
-$dsn = "mysql:host=localhost;dbname=serenatto";  // DSN (Data Source Name) para MySQL
-$usuario = "root";                              // Nome de usuário do banco de dados
-$senha = "uphsuto123@KL";                       // Senha do banco de dados
+// Cria uma nova instância do objeto PDO para se conectar ao banco de dados MySQL
+$pdo = new PDO('mysql:host=localhost;dbname=serenatto', 'root', 'uphsuto123@KL');
 
-try {
-    // Cria uma nova instância do PDO (PHP Data Objects)
-    $pdo = new PDO($dsn, $usuario, $senha);
+// Parâmetros da conexão:
+// 'mysql:host=localhost' - Tipo de banco de dados (MySQL) e o host onde o banco de dados está localizado.
+// 'dbname=serenatto' - Nome do banco de dados que será utilizado.
+// 'root' - Nome de usuário do banco de dados.
+// 'uphsuto123@KL' - Senha do banco de dados.
 
-    // Configura o PDO para lançar exceções em caso de erros
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    // Captura erros de conexão e exibe uma mensagem de erro
-    echo 'Erro de conexão: ' . $e->getMessage();
-}
-
+// Lembre-se de que este código é uma conexão simples e direta, e geralmente não é recomendado usar senhas diretamente no código em ambientes de produção. Em ambientes de produção, é preferível utilizar variáveis de ambiente ou algum método mais seguro para armazenar credenciais.

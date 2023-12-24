@@ -1,30 +1,35 @@
-
-
-form{
+/* Estilo para o formulário */
+form {
     display: flex;
     flex-direction: column;
     width: 400px;
 }
 
-.container-form{
+/* Estilo para o container do formulário */
+.container-form {
     display: flex;
     justify-content: center;
 }
 
-.container-radio{
+/* Estilo para o container dos elementos radio */
+.container-radio {
     display: flex;
 }
 
-.container-radio div{
+/* Estilo para os elementos dentro do container-radio */
+.container-radio div {
     padding: 10px;
 }
 
-form label{
+/* Estilo para as etiquetas dentro do formulário */
+form label {
     color: #EBC181;
     font-weight: bold;
     margin-bottom: 5px;
 }
-form input{
+
+/* Estilo para os campos de entrada dentro do formulário */
+form input {
     border-radius: 10px;
     border: 3px solid #333B1E;
     padding: 10px;
@@ -32,18 +37,20 @@ form input{
     transition: 0.5s;
 }
 
-form input[type='file']{
+/* Estilo específico para campos de tipo 'file' dentro do formulário */
+form input[type='file'] {
     color: #FFFFFF;
 }
 
-form input::file-selector-button{
+/* Estilo para o botão de seleção de arquivo dentro do formulário */
+form input::file-selector-button {
     padding: 5px;
     border-radius: 5px;
     border: none;
 }
 
-
-form input:focus{
+/* Estilo para o foco nos campos de entrada dentro do formulário */
+form input:focus {
     border: 3px solid #EBC181;
     outline: none;
 }

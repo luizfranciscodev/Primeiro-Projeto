@@ -1,0 +1,5 @@
+# Ignorar todos os arquivos da pasta vendor
+vendor/*
+
+# Exceto o arquivo de autoload
+!vendor/autoload.php

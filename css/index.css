@@ -1,16 +1,21 @@
-.logo{
-    width: 500px;
+/* Estilo para a classe .logo */
+.logo {
+    width: 500px; /* Largura fixa para a logo */
 }
 
-body{
-    background-color: #333B1E;
-    font-family: 'Barlow', sans-serif;
-}
-main{
-    height: 100vh;
+/* Estilo para o corpo do documento */
+body {
+    background-color: #333B1E; /* Cor de fundo do corpo */
+    font-family: 'Barlow', sans-serif; /* Família de fontes para o corpo do documento */
 }
 
-.container-banner{
+/* Estilo para a seção principal (main) */
+main {
+    height: 100vh; /* Altura de 100% da altura da viewport (visualização) */
+}
+
+/* Estilo para o container do banner */
+.container-banner {
     width: 100%;
     height: 80%;
     background-image: url("../img/banner-site.jpg");
@@ -18,7 +23,8 @@ main{
     background-repeat: no-repeat;
 }
 
-.container-texto-banner{
+/* Estilo para o container de texto do banner */
+.container-texto-banner {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -27,44 +33,51 @@ main{
     height: 100%;
 }
 
-.container-banner h1,p{
-    color: #FFFFFF;
+/* Estilo para cabeçalhos e parágrafos dentro do container-banner */
+.container-banner h1, p {
+    color: #FFFFFF; /* Cor do texto */
 }
 
-h2{
+/* Estilo para cabeçalho h2 */
+h2 {
     text-align: center;
     font-size: 48px;
-    margin: 20px 0px;
-    color: #FFF;
-    font-weight: bold;
+    margin: 20px 0; /* Margem superior e inferior de 20px, sem margem nos lados */
+    color: #FFF; /* Cor do texto */
+    font-weight: bold; /* Peso da fonte em negrito */
 }
 
-
-.container-cafe-manha, .container-almoco{
+/* Estilo para os containers de café da manhã e almoço */
+.container-cafe-manha, .container-almoco {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-.container-cafe-manha-titulo, .container-almoco-titulo{
+/* Estilo para os títulos dos containers de café da manhã e almoço */
+.container-cafe-manha-titulo, .container-almoco-titulo {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.container-cafe-manha-titulo h3, .container-almoco-titulo h3{
+
+/* Estilo para os títulos h3 dos containers de café da manhã e almoço */
+.container-cafe-manha-titulo h3, .container-almoco-titulo h3 {
     font-size: 32px;
-    color: #EBC181;
+    color: #EBC181; /* Cor específica para os títulos */
     text-align: center;
-    margin: 15px 0px 5px;
+    margin: 15px 0 5px;
 }
 
-.container-cafe-manha-produtos, .container-almoco-produtos{
+/* Estilo para os containers de produtos de café da manhã e almoço */
+.container-cafe-manha-produtos, .container-almoco-produtos {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.container-produto{
+/* Estilo para os containers de produtos */
+.container-produto {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,29 +89,33 @@ h2{
     height: auto;
 }
 
-.container-produto img{
+/* Estilo para as imagens dentro dos containers de produtos */
+.container-produto img {
     width: 350px;
     height: 270px;
     object-fit: cover;
 }
 
-.container-produto p{
+/* Estilo para os parágrafos dentro dos containers de produtos */
+.container-produto p {
     margin: 10px 0;
     text-align: center;
 }
 
-.container-produto p:nth-child(4){
-    color: #9B8357;
+/* Estilo para o quarto parágrafo dentro dos containers de produtos */
+.container-produto p:nth-child(4) {
+    color: #9B8357; /* Cor específica para o quarto parágrafo */
     font-size: 18px;
     font-weight: 600;
 }
 
-.container-produto p:nth-child(2){
+/* Estilo para o segundo parágrafo dentro dos containers de produtos */
+.container-produto p:nth-child(2) {
     font-weight: bold;
     font-size: 20px;
 }
 
-.ornaments{
-    width: 200px;
+/* Estilo para a classe .ornaments */
+.ornaments {
+    width: 200px; /* Largura fixa para a classe .ornaments */
 }
-

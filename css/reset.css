@@ -1,8 +1,9 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
+/* Reset CSS básico conforme Eric Meyer: http://meyerweb.com/eric/tools/css/reset/
+   Versão 2.0 | 20110126
+   Licença: nenhum (domínio público)
 */
 
+/* Seletores universais comuns que resetam propriedades para evitar estilos padrões do navegador */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,32 +17,42 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+    margin: 0; /* Resetando margens */
+    padding: 0; /* Resetando preenchimentos */
+    border: 0; /* Resetando bordas */
+    font: inherit; /* Herdando a fonte do elemento pai */
+    vertical-align: baseline; /* Alinhamento vertical à linha de base */
 }
-/* HTML5 display-role reset for older browsers */
+
+/* Resetando o display para elementos HTML5 */
+/* Elementos que são normalmente de bloco devem ser exibidos como blocos */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
+
+/* Resetando a altura da linha para o corpo do documento */
 body {
     line-height: 1;
 }
+
+/* Resetando estilos de listas ordenadas e não ordenadas */
 ol, ul {
     list-style: none;
 }
+
+/* Resetando estilos de citação */
 blockquote, q {
     quotes: none;
 }
+
+/* Removendo aspas do conteúdo de citações antes e depois */
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
     content: none;
 }
+
+/* Resetando estilos de tabelas para evitar espaçamento e bordas padrão */
 table {
     border-collapse: collapse;
     border-spacing: 0;
